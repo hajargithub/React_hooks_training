@@ -2,29 +2,27 @@ import React, { createContext, useState } from 'react';
 import ProductList from './components/ProductList';
 import ProductSearch from './components/ProductSearch';
 import ThemeToggle from './components/ThemeToggle';
-
-// TODO: Exercice 2.1 - Créer le LanguageContext
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 export const ThemeContext = createContext();
 
 const App = () => {
   const [isDarkTheme, setIsDarkTheme] = useState(false);
   const [searchTerm, setSearchTerm] = useState('');
-  // TODO: Exercice 2.2 - Ajouter l'état pour la langue
 
   return (
     <ThemeContext.Provider value={{ isDarkTheme, setIsDarkTheme }}>
-      {/* TODO: Exercice 2.1 - Wrapper avec LanguageContext.Provider */}
-      <div className={`container ${isDarkTheme ? 'bg-dark text-light' : 'bg-light'}`}>
-        <header className="my-4">
-          <h1 className="text-center">Catalogue de Produits</h1>
-          <div className="d-flex justify-content-end gap-2">
-            <ThemeToggle />
-            {/* TODO: Exercice 2.2 - Ajouter le sélecteur de langue */}
+      <div className={`${isDarkTheme ? 'bg-dark text-light' : 'bg-light'}`} style={{ minHeight: "100vh" }}>
+        <header className={`py-3 shadow ${isDarkTheme ? 'bg-secondary bg-gradient text-light' : 'bg-primary  text-light'}`}>
+          <div className="container">
+            <h1 className="text-center">Catalogue de Produits</h1>
+            <div className="d-flex justify-content-end gap-2">
+              <ThemeToggle />
+            </div>
           </div>
         </header>
-        <main>
-        <ProductSearch onSearch={setSearchTerm} />
+        <main className="container py-4">
+          <ProductSearch onSearch={setSearchTerm} />
           <ProductList searchTerm={searchTerm} />
         </main>
       </div>
@@ -32,4 +30,4 @@ const App = () => {
   );
 };
 
-export default App
+export default App;

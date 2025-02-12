@@ -1,27 +1,38 @@
 import React, { useContext, useState } from 'react';
 import { ThemeContext } from '../App';
 import useProductSearch from '../hooks/useProductSearch';
-import ProductSearch from './ProductSearch';
+import SpinnerComponent from './SpinnerComponent';
+import { Col, Row } from 'react-bootstrap';
+import ProductCard from './ProductCard';
 
 const ProductList = ({ searchTerm }) => {
   const { isDarkTheme } = useContext(ThemeContext);
   const {  products, loading, error, } = useProductSearch(searchTerm);
   
-  if (loading) return (
-    <div className="text-center my-4">
-      <div className="spinner-border" role="status">
-        <span className="visually-hidden">Chargement...</span>
-      </div>
-    </div>
-  );
+  if (loading) return <SpinnerComponent />
   
   if (error) return (
     <div className="alert alert-danger" role="alert">
       Erreur: {error}
     </div>
   );
-  
   return (
+    <Row xs={1} md={2} lg={3} className="g-4">
+      {products.length === 0 && (
+        <Col className="text-center">
+          <p>Aucun produit trouvé pour "<strong>{searchTerm}</strong>"</p>
+        </Col>
+      )}
+
+      {products.map((product) => (
+        <Col key={product.id}>
+          <ProductCard product={product} />
+        </Col>
+      ))}
+    </Row>
+  );
+};
+  /* return (
     <div>  
       {loading && (
         <div className="text-center my-4">
@@ -62,7 +73,7 @@ const ProductList = ({ searchTerm }) => {
         ))}
       </div>
     </div>
-  );
-};
+  ); */
+// };
 
 export default ProductList;

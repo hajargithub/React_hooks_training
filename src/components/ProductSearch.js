@@ -1,6 +1,7 @@
 import React, { useState, useContext, useEffect } from 'react';
 import { ThemeContext } from '../App';
 import useDebounce from '../hooks/useDebounce';
+import { Form, InputGroup } from 'react-bootstrap';
 
 const ProductSearch = ({onSearch }) => {
   if (!onSearch) {
@@ -19,15 +20,15 @@ const ProductSearch = ({onSearch }) => {
   // TODO: Exercice 1.2 - Utiliser le hook useDebounce
   
   return (
-    <div className="mb-4">
-      <input
+    <InputGroup  className="mb-4">
+      <Form.Control
         type="text"
         value={searchTerm}
         onChange={(e) => setSearchTerm(e.target.value)}
         placeholder="Rechercher un produit..."
-        className={`form-control ${isDarkTheme ? 'bg-dark text-light' : ''}`}
+        className={ isDarkTheme ? 'bg-secondary bg-gradient text-light' : ''}
       />
-    </div>
+    </InputGroup >
   );
 };
 
