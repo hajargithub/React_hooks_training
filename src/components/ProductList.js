@@ -3,9 +3,8 @@ import { ThemeContext } from '../App';
 import useProductSearch from '../hooks/useProductSearch';
 import ProductSearch from './ProductSearch';
 
-const ProductList = () => {
+const ProductList = ({ searchTerm }) => {
   const { isDarkTheme } = useContext(ThemeContext);
-  const [searchTerm, setSearchTerm] = useState('');
   const {  products, loading, error, } = useProductSearch(searchTerm);
   
   if (loading) return (
@@ -23,9 +22,7 @@ const ProductList = () => {
   );
   
   return (
-    <div>
-      <ProductSearch onSearch={setSearchTerm} />
-      
+    <div>  
       {loading && (
         <div className="text-center my-4">
           <div className="spinner-border" role="status">

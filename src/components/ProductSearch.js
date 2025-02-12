@@ -3,6 +3,9 @@ import { ThemeContext } from '../App';
 import useDebounce from '../hooks/useDebounce';
 
 const ProductSearch = ({onSearch }) => {
+  if (!onSearch) {
+    console.error("Erreur: onSearch n'a pas été fourni à ProductSearch");
+  }
   const [searchTerm, setSearchTerm] = useState('');
   const debouncedSearchTerm = useDebounce(searchTerm, 500);
   const { isDarkTheme } = useContext(ThemeContext);
