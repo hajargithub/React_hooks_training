@@ -1,18 +1,12 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { ThemeContext } from '../App';
 import useProductSearch from '../hooks/useProductSearch';
+import ProductSearch from './ProductSearch';
 
 const ProductList = () => {
   const { isDarkTheme } = useContext(ThemeContext);
-  // TODO: Exercice 2.1 - Utiliser le LanguageContext pour les traductions
-  
-  const { 
-    products, 
-    loading, 
-    error,
-    // TODO: Exercice 4.1 - Récupérer la fonction de rechargement
-    // TODO: Exercice 4.2 - Récupérer les fonctions et états de pagination
-  } = useProductSearch();
+  const [searchTerm, setSearchTerm] = useState('');
+  const {  products, loading, error, } = useProductSearch(searchTerm);
   
   if (loading) return (
     <div className="text-center my-4">
@@ -30,7 +24,22 @@ const ProductList = () => {
   
   return (
     <div>
-      {/* TODO: Exercice 4.1 - Ajouter le bouton de rechargement */}
+      <ProductSearch onSearch={setSearchTerm} />
+      
+      {loading && (
+        <div className="text-center my-4">
+          <div className="spinner-border" role="status">
+            <span className="visually-hidden">Chargement...</span>
+          </div>
+        </div>
+      )}
+
+      {error && (
+        <div className="alert alert-danger" role="alert">
+          Erreur: {error}
+        </div>
+      )}
+
       <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
         {products.map(product => (
           <div key={product.id} className="col">
@@ -55,29 +64,6 @@ const ProductList = () => {
           </div>
         ))}
       </div>
-      
-      {/* TODO: Exercice 4.2 - Ajouter les contrôles de pagination */}
-      {/* Exemple de structure pour la pagination :
-      <nav className="mt-4">
-        <ul className="pagination justify-content-center">
-          <li className="page-item">
-            <button className="page-link" onClick={previousPage}>
-              Précédent
-            </button>
-          </li>
-          <li className="page-item">
-            <span className="page-link">
-              Page {currentPage} sur {totalPages}
-            </span>
-          </li>
-          <li className="page-item">
-            <button className="page-link" onClick={nextPage}>
-              Suivant
-            </button>
-          </li>
-        </ul>
-      </nav>
-      */}
     </div>
   );
 };
