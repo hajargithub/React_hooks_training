@@ -1,9 +1,11 @@
 import React, { useContext } from 'react';
 import { Card, Button } from 'react-bootstrap';
 import { ThemeContext } from '../App';
+import { LanguageContext } from '../contexts/LanguageContext';
 
 const ProductCard = ({ product }) => {
   const { isDarkTheme } = useContext(ThemeContext);
+  const { language, translations } = useContext(LanguageContext);
 
   return (
     <Card 
@@ -22,10 +24,10 @@ const ProductCard = ({ product }) => {
           {product.description}
         </Card.Text>
         <Card.Text className="fw-bold text-center">
-          Prix: {product.price}€
+        {translations[language].price}: {product.price}€
         </Card.Text>
         <Button variant={isDarkTheme ? "outline-light" : "primary"} className="w-100 mt-auto">
-          Acheter
+        {translations[language].buy}
         </Button>
       </Card.Body>
     </Card>

@@ -4,8 +4,11 @@ import useProductSearch from '../hooks/useProductSearch';
 import SpinnerComponent from './SpinnerComponent';
 import { Col, Row } from 'react-bootstrap';
 import ProductCard from './ProductCard';
+import { LanguageContext } from '../contexts/LanguageContext';
 
 const ProductList = ({ searchTerm }) => {
+  const { language, translations } = useContext(LanguageContext);
+  
   const { isDarkTheme } = useContext(ThemeContext);
   const {  products, loading, error, } = useProductSearch(searchTerm);
   
@@ -20,7 +23,8 @@ const ProductList = ({ searchTerm }) => {
     <Row xs={1} md={2} lg={3} className="g-4">
       {products.length === 0 && (
         <Col className="text-center">
-          <p>Aucun produit trouvé pour "<strong>{searchTerm}</strong>"</p>
+          <p> {translations[language].productsNotFound} "<strong>{searchTerm}</strong>"</p>
+          console
         </Col>
       )}
 
