@@ -7,8 +7,8 @@ import ProductCard from './ProductCard';
 import { LanguageContext } from '../contexts/LanguageContext';
 
 const ProductList = ({ searchTerm }) => {
-  const { language, translations } = useContext(LanguageContext);
-  
+    const { language, translations } = useContext(LanguageContext);
+ 
   const { isDarkTheme } = useContext(ThemeContext);
   const {  products, loading, error, } = useProductSearch(searchTerm);
   
