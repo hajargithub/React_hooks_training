@@ -1,10 +1,11 @@
 import React, { useContext, useState } from 'react';
-import { ThemeContext } from '../App';
+
 import useProductSearch from '../hooks/useProductSearch';
 import SpinnerComponent from './SpinnerComponent';
 import { Col, Row } from 'react-bootstrap';
 import ProductCard from './ProductCard';
 import { LanguageContext } from '../contexts/LanguageContext';
+import { ThemeContext } from '../contexts/ThemeContext';
 
 const ProductList = ({ searchTerm }) => {
     const { language, translations } = useContext(LanguageContext);

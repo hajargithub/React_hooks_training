@@ -1,7 +1,8 @@
 import React, { useContext } from 'react';
 import { useLanguage } from '../contexts/LanguageContext';
 import { Dropdown } from 'react-bootstrap';
-import { ThemeContext } from '../App';
+import { ThemeContext } from '../contexts/ThemeContext';
+
 
 const LanguageToggle = () => {
   const { language, setLanguage, languages } = useLanguage();

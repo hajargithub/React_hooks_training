@@ -1,8 +1,9 @@
 import React, { useState, useContext, useEffect } from 'react';
-import { ThemeContext } from '../App';
+
 import useDebounce from '../hooks/useDebounce';
 import { Form, InputGroup } from 'react-bootstrap';
 import { LanguageContext } from '../contexts/LanguageContext';
+import { ThemeContext } from '../contexts/ThemeContext';
 
 const ProductSearch = ({onSearch }) => {
   if (!onSearch) {
@@ -11,7 +12,7 @@ const ProductSearch = ({onSearch }) => {
   const { language, translations } = useContext(LanguageContext);
 
   const [searchTerm, setSearchTerm] = useState('');
-  const debouncedSearchTerm = useDebounce(searchTerm, 500);
+  const debouncedSearchTerm = useDebounce(searchTerm, 1000);
   const { isDarkTheme } = useContext(ThemeContext);
   useEffect(() => {
     onSearch(debouncedSearchTerm);
