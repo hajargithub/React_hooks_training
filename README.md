@@ -32,73 +32,52 @@ npm install
 npm start
 ```
 
-## Instructions pour le TP
-
-Pour chaque exercice :
-1. Lisez attentivement l'énoncé
-2. Implémentez la solution
-3. Testez votre implémentation (pensez à faire des copies d'écran)
-4. Mettez à jour la section correspondante dans ce README avec :
-   - Une brève explication de votre solution
-   - Des captures d'écran montrant le fonctionnement
-   - Les difficultés rencontrées et comment vous les avez résolues
-5. Commitez vos changements avec un message descriptif
 
 ### Exercice 1 : État et Effets 
 #### Objectif : Implémenter une recherche en temps réel
 
-- [ ] 1.1 Modifier le composant ProductSearch pour utiliser la recherche
-- [ ] 1.2 Implémenter le debounce sur la recherche
-- [ ] 1.3 Documenter votre solution ici
+Utilisation de useState et useEffect pour gérer la recherche en temps réel.
+Implémentation du hook useDebounce pour limiter les appels réseau pendant la saisie.
+Application de la méthode startsWith() pour filtrer les produits dont le titre commence par le terme recherché.
+🖼️ Captures d'écran :
+ <img src="./src/captures/capture1" alt="Capture for Question 1">
+  <img src="./src/captures/capture2" alt="Capture for Question 1">
 
-_Votre réponse pour l'exercice 1 :_
-```
-Expliquez votre solution ici
-[Ajoutez vos captures d'écran]
-```
+⚠️ Difficultés rencontrées et solutions :
+Problème : Les résultats s'affichaient trop rapidement ➔ Solution : Ajout du debounce
+Problème : La recherche renvoyait des résultats partiels ➔ Solution : Utilisation de startsWith()
 
 ### Exercice 2 : Context et Internationalisation
 #### Objectif : Gérer les préférences de langue
 
-- [ ] 2.1 Créer le LanguageContext
-- [ ] 2.2 Ajouter le sélecteur de langue
-- [ ] 2.3 Documenter votre solution ici
+Création d'un LanguageContext pour gérer les préférences de langue.
+Ajout d'un sélecteur de langue dans la Navbar pour basculer entre le français et l'anglais.
+Utilisation de fichiers de traduction pour afficher dynamiquement les textes selon la langue sélectionnée.
+🖼️ Captures d'écran :
+  <img src="./src/captures/capture3" alt="Capture for Question 2">
+   <img src="./src/captures/capture4" alt="Capture for Question 2">
 
-_Votre réponse pour l'exercice 2 :_
-```
-Expliquez votre solution ici
-[Ajoutez vos captures d'écran]
-```
-
+⚠️ Difficultés rencontrées et solutions :
+Problème : La langue ne persistait pas si on Refresh la Page ➔ Solution : Stockage dans localStorage
 ### Exercice 3 : Hooks Personnalisés
 #### Objectif : Créer des hooks réutilisables
+useDebounce : Retarde l'exécution d'une fonction pour éviter les appels réseau excessifs lors de la saisie.
+useLocalStorage : Permet de sauvegarder et récupérer des valeurs dans le localStorage (thème, langue, panier).
+🖼️ Captures d'écran :
+ <img src="./src/captures/capture5" alt="Capture for Question 3">
+  <img src="./src/captures/capture6" alt="Capture for Question 3">
+⚠️ Difficultés rencontrées et solutions :
+Problème : useLocalStorage ne mettait pas à jour le state automatiquement ➔ Solution : Utilisation de useEffect pour surveiller les changements
+Problème : Déclenchement trop rapide de la recherche ➔ Solution : Ajustement du délai dans useDebounce
 
-- [ ] 3.1 Créer le hook useDebounce
-- [ ] 3.2 Créer le hook useLocalStorage
-- [ ] 3.3 Documenter votre solution ici
-
-_Votre réponse pour l'exercice 3 :_
-```
-Expliquez votre solution ici
-[Ajoutez vos captures d'écran]
-```
 
 ### Exercice 4 : Gestion Asynchrone et Pagination
 #### Objectif : Gérer le chargement et la pagination
+Utilisation de useEffect pour charger les données via une API externe.
+Ajout d'un spinner pour indiquer le chargement des données.
+Mise en place d'une pagination dynamique avec contrôle du nombre de produits par page.
+🖼️ Captures d'écran :
 
-- [ ] 4.1 Ajouter le bouton de rechargement
-- [ ] 4.2 Implémenter la pagination
-- [ ] 4.3 Documenter votre solution ici
+ <img src="./src/captures/capture7" alt="Capture for Question 4">
+ <img src="./src/captures/capture8" alt="Capture for Question 4">
 
-_Votre réponse pour l'exercice 4 :_
-```
-Expliquez votre solution ici
-[Ajoutez vos captures d'écran]
-```
-
-## Rendu
-
-- Ajoutez l'URL de votre dépôt Github dans  **Classroom** et envoyer la réponse dès le démarage de votre projet.
-- Les push doivent se faire au fûr et à mesure que vous avancez dans votre projet.
-- Le README.md doit être à jour avec vos réponses et captures d'écran. 
-- Chaques exercice doit faire l'objet d'au moins un commit avec un message mentionnant le numéro de l'exercice.
