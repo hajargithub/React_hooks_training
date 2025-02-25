@@ -12,7 +12,7 @@ const CartPage = () => {
   const totalPrice = cartItems.reduce((acc, item) => acc + item.price * item.quantity, 0);
 
   return (
-    <div className={`container py-5 ${isDarkTheme ? 'bg-secondry text-light' : 'bg-light text-dark'}`} style={{ minHeight: '100vh' }}>
+    <div className={`container w-100 py-5 ${isDarkTheme ? 'bg-secondry text-light' : 'bg-light text-dark'}`} style={{ minHeight: '100vh' }}>
       <Card className={`p-4 shadow-lg ${isDarkTheme ? 'bg-secondary  bg-gradient text-light' : 'bg-white'}`}>
         <h2 className="mb-4">{translations[language].yourCart}</h2>
 
@@ -20,7 +20,7 @@ const CartPage = () => {
           <p className="text-center">{translations[language].emptyCart}</p>
         ) : (
           <>
-            <Table bordered hover responsive className={isDarkTheme ? ' table-secondary  bg-gradient '  : 'table-light'}>
+            <Table bordered hover responsive className={isDarkTheme ? ' table-dark  table-gradient '  : 'table-light'}>
               <thead>
                 <tr>
                   <th>{translations[language].catalogue}</th>

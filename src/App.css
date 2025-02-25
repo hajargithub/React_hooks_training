@@ -1,0 +1,38 @@
+/*  Réduire la hauteur du range slider */
+.custom-range {
+    height: 12px;
+    padding: 0;
+    margin-top: 5px;
+  }
+  
+  /*  Uniformiser avec le select */
+  .form-select,
+  .custom-range {
+    border-radius: 8px;
+    height: 38px; /* Adapter la hauteur */
+  }
+  
+  /*  Thumb (le rond du slider) */
+  .custom-range::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background-color: #007bff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .custom-range::-webkit-slider-thumb:hover {
+    background-color: #0056b3;
+  }
+  
+  /* 🌓 Mode sombre */
+  .bg-secondary.bg-gradient .custom-range {
+    background: linear-gradient(135deg, #3c3c3c, #4a4a4a);
+  }
+  
+  .bg-secondary.bg-gradient .custom-range::-webkit-slider-thumb {
+    background-color: #17a2b8;
+  }
+  
