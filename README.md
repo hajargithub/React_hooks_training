@@ -41,6 +41,7 @@ Implémentation du hook useDebounce pour limiter les appels réseau pendant la s
 Application de la méthode startsWith() pour filtrer les produits dont le titre commence par le terme recherché.
 ### 🖼️ Captures d'écran :
   <img src="./public/captures/capture2.PNG" alt="Capture for Question 1">
+   <img src="./public/captures/capture01.PNG" alt="Capture for Question 1">
  <img src="./public/captures/capture1.PNG" alt="Capture for Question 1">
 
 ### ⚠️ Difficultés rencontrées et solutions :
@@ -65,6 +66,7 @@ useDebounce : Retarde l'exécution d'une fonction pour éviter les appels résea
 useLocalStorage : Permet de sauvegarder et récupérer des valeurs dans le localStorage (thème, langue, panier).
 ### 🖼️ Captures d'écran :
  <img src="./public/captures/capture5.PNG" alt="Capture for Question 3">
+  <img src="./public/captures/capture02.PNG" alt="Capture for Question 3">
   <img src="./public/captures/capture6.PNG" alt="Capture for Question 3">
   
 ### ⚠️ Difficultés rencontrées et solutions :
