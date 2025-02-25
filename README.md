@@ -40,8 +40,8 @@ Utilisation de useState et useEffect pour gérer la recherche en temps réel.
 Implémentation du hook useDebounce pour limiter les appels réseau pendant la saisie.
 Application de la méthode startsWith() pour filtrer les produits dont le titre commence par le terme recherché.
 ### 🖼️ Captures d'écran :
- <img src="./public/captures/capture1.PNG" alt="Capture for Question 1">
   <img src="./public/captures/capture2.PNG" alt="Capture for Question 1">
+ <img src="./public/captures/capture1.PNG" alt="Capture for Question 1">
 
 ### ⚠️ Difficultés rencontrées et solutions :
 Problème : Les résultats s'affichaient trop rapidement ➔ Solution : Ajout du debounce
