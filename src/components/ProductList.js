@@ -43,7 +43,8 @@ const ProductList = ({ searchTerm }) => {
     };
 
     fetchProducts();
-  }, []);
+  },
+   []);
 
   const filteredProducts = products.filter((product) => {
     const matchesSearch = product.title

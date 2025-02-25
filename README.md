@@ -40,8 +40,8 @@ Utilisation de useState et useEffect pour gérer la recherche en temps réel.
 Implémentation du hook useDebounce pour limiter les appels réseau pendant la saisie.
 Application de la méthode startsWith() pour filtrer les produits dont le titre commence par le terme recherché.
 ### 🖼️ Captures d'écran :
- <img src="./src/captures/capture1" alt="Capture for Question 1">
-  <img src="./src/captures/capture2" alt="Capture for Question 1">
+ <img src="./src/captures/capture1.PNG" alt="Capture for Question 1">
+  <img src="./src/captures/capture2.PNG" alt="Capture for Question 1">
 
 ### ⚠️ Difficultés rencontrées et solutions :
 Problème : Les résultats s'affichaient trop rapidement ➔ Solution : Ajout du debounce
@@ -54,8 +54,8 @@ Création d'un LanguageContext pour gérer les préférences de langue.
 Ajout d'un sélecteur de langue dans la Navbar pour basculer entre le français et l'anglais.
 Utilisation de fichiers de traduction pour afficher dynamiquement les textes selon la langue sélectionnée.
 ### 🖼️ Captures d'écran :
-  <img src="./src/captures/capture3" alt="Capture for Question 2">
-   <img src="./src/captures/capture4" alt="Capture for Question 2">
+  <img src="./src/captures/capture3.PNG" alt="Capture for Question 2">
+   <img src="./src/captures/capture4.PNG" alt="Capture for Question 2">
 
 ### ⚠️ Difficultés rencontrées et solutions :
 Problème : La langue ne persistait pas si on Refresh la Page ➔ Solution : Stockage dans localStorage
@@ -64,8 +64,8 @@ Problème : La langue ne persistait pas si on Refresh la Page ➔ Solution : Sto
 useDebounce : Retarde l'exécution d'une fonction pour éviter les appels réseau excessifs lors de la saisie.
 useLocalStorage : Permet de sauvegarder et récupérer des valeurs dans le localStorage (thème, langue, panier).
 ### 🖼️ Captures d'écran :
- <img src="./src/captures/capture5" alt="Capture for Question 3">
-  <img src="./src/captures/capture6" alt="Capture for Question 3">
+ <img src="./src/captures/capture5.PNG" alt="Capture for Question 3">
+  <img src="./src/captures/capture6.PNG" alt="Capture for Question 3">
   
 ### ⚠️ Difficultés rencontrées et solutions :
 Problème : useLocalStorage ne mettait pas à jour le state automatiquement ➔ Solution : Utilisation de useEffect pour surveiller les changements
@@ -79,8 +79,8 @@ Ajout d'un spinner pour indiquer le chargement des données.
 Mise en place d'une pagination dynamique avec contrôle du nombre de produits par page.
 ### 🖼️ Captures d'écran :
 
- <img src="./src/captures/capture7" alt="Capture for Question 4">
- <img src="./src/captures/capture8" alt="Capture for Question 4">
+ <img src="./src/captures/capture7.PNG" alt="Capture for Question 4">
+ <img src="./src/captures/capture8.PNG" alt="Capture for Question 4">
 
 ### Conclusion:
  
