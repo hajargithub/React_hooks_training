@@ -48,7 +48,7 @@ const ProductList = ({ searchTerm }) => {
   const filteredProducts = products.filter((product) => {
     const matchesSearch = product.title
       .toLowerCase()
-      .includes(searchTerm.toLowerCase());
+      .startsWith(searchTerm.toLowerCase());
     const matchesCategory =
       selectedCategory === "all" || product.category === selectedCategory;
     const matchesPrice =
